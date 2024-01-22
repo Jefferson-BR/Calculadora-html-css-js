@@ -1,0 +1,146 @@
+@charset "UTF-8"; /* formato de codificação de caracteres */
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    text-decoration: none;
+}
+
+/* Definindo variáveis */
+:root {
+    --body-background: url(../assets/img/background_numbers.jpg);
+    --efeito_hover: #7ccdff;
+    --cor_botoes_operadores: #cc22ff;
+}
+/* Estilos para o corpo da página */
+body {
+    min-height: 100vh;
+    background: var(--body-background);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    margin: 20px 0;
+}
+
+/* Estilos para a calculadora */
+.calculadora {
+    width: 250px;
+    height: 500px;
+    border-radius: 30px;
+    background: linear-gradient(130deg, #fff, #fff3);
+    z-index: 2;
+    backdrop-filter: blur(15px);
+    box-shadow: 5px 5px 20px 5px rgba(0, 0, 0, 0.651);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    gap: 10px;
+}
+
+/* Estilos para o display */
+.display {
+    width: 100%;
+    height: 70px;
+    border: 0;
+    outline: none;
+    background: transparent;
+    padding: 5px;
+    text-align: right;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+/* Estilos para a área dos botões */
+.area-btn {
+    display: flex;
+    gap: 10px;
+}
+
+/* Estilos para os botões */
+.botoes {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+}
+
+.botoes input {
+    border-radius: 7px;
+    width: 45px;
+    aspect-ratio: 1/1;
+    border: 0;
+    outline: none;
+    background: #fff5;
+    box-shadow: inset 0 0 7px #fff, 0 0 20px none;
+    color: black;
+    font-weight: bold;
+    font-style: 1.2;
+    cursor: pointer;
+    transition: 0.13s;
+}
+
+.botoes input:hover {
+    background: #ffffffb4;
+    color: var(--efeito_hover);
+}
+
+.botoes input:active {
+    background: #0000;
+}
+
+/* Estilos para os operadores */
+.botoes .clear,
+.botoes .deletar-digito,
+.botoes .operador {
+    color: var(--cor_botoes_operadores);
+}
+
+.botoes .igual {
+    background: var(--efeito_hover);
+}
+
+/* Animação do efeito de piscar */
+@keyframes blink {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+    }
+
+/* Aplicar a classe de blink (complemento da animação)*/
+.blink {
+    animation: blink 1.7s infinite;
+}
+
+.footer {
+    position: absolute;
+    bottom: -10px;
+    width: 100%;
+}
+
+.container {
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+footer a{
+    background-color: rgba(0, 0, 0, 0.884);
+    color: white;
+    padding: 5px;
+    border-radius: 15px;
+}
